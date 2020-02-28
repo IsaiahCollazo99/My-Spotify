@@ -1,9 +1,12 @@
 import React from 'react';
+import Navbar from './../Navbar/Navbar';
+import RecentlyPlayed from './RecentlyPlayed';
 
 const Home = (props) => {
     return (
         <div>
-            Home
+            <Navbar />
+            <RecentlyPlayed />
         </div>
     )
 }
