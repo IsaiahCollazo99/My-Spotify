@@ -1,0 +1,13 @@
+import React from 'react';
+
+const Login = (props) => {
+    return (
+        <div>
+            <a href="http://localhost:8888">
+                <button>Login With Spotify</button>
+            </a>
+        </div>
+    )
+} // End of Login() Component
+
+export default Login;

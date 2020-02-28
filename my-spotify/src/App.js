@@ -1,7 +1,10 @@
 import React from 'react';
 import Spotify from 'spotify-web-api-js'; 
-import Home from './Components/Home/Home';
+import { Route, Switch } from 'react-router-dom';
 import './App.css';
+import Home from './Components/Home/Home';
+import Login from './Components/Login/Login';
+import NowPlaying from './Components/NowPlaying/NowPlaying';
 
 const spotifyWebApi = new Spotify();
 
@@ -9,6 +12,7 @@ class App extends React.Component {
   constructor() {
     super()
     const {access_token} = this.getHashParams();
+    this.token = access_token;
     this.state = {
       loggedIn: access_token ? true : false,
       nowPlaying: {
@@ -43,17 +47,18 @@ class App extends React.Component {
   }
   
   render = () => {
-    let {loggedIn} = this.state;
+    let {nowPlaying} = this.state;
+    let {name, img} = nowPlaying;
     return (
       <div className="App">
-        <a href="http://localhost:8888">
-          <button>Login With Spotify</button>
-        </a>
-          {/* <Home value={access_token}/> */}
-          <div> Now Playing: {this.state.nowPlaying.name} </div>
-          <img alt="album" src={ this.state.nowPlaying.img } style={{width: 100}}/>
-          <button onClick={() => this.getNowPlaying()}>Check Now Playing</button>
-        
+      <Switch>
+
+          <Route path={"/login"} component={Login} />
+          <Route path={"/nowPlaying"} component={NowPlaying} name={name} img={img} handleClick={this.getNowPlaying()}/>
+          <Route exact path={"/"} >
+            <Home value={this.token}/>
+          </Route>
+        </Switch>
       </div>
     );
   }
