@@ -56,7 +56,7 @@ class App extends React.Component {
           <Route path={"/login"} component={Login} />
           <Route path={"/nowPlaying"} component={NowPlaying} name={name} img={img} handleClick={this.getNowPlaying()}/>
           <Route exact path={"/"} >
-            <Home token={this.token}/>
+            <Home token={this.token} spotifyWebApi={spotifyWebApi}/>
           </Route>
         </Switch>
       </div>
