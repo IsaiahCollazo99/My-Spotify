@@ -2,7 +2,7 @@ import React from 'react';
 
 const Track = (props) => {
     return (
-        <div>
+        <div className="tracks">
             <p>{props.name} By. {props.artist}</p>
             <img src={props.img} alt="album" style={{width: 100}} />
         </div>

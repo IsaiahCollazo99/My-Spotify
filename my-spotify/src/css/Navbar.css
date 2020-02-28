@@ -1,0 +1,21 @@
+nav {
+    display: flex;
+    flex-direction: column;
+    font-size: 24px;
+    background: #030303;
+    height: 100vh;
+    grid-column: 1 / 2;
+}
+
+a {
+    margin: 25px;
+    text-decoration: none;
+}
+
+a:hover {
+    font-size: 26px;
+}
+
+a:visited {
+    color: white;
+}

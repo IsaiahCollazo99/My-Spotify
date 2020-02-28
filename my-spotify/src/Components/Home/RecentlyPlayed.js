@@ -1,5 +1,6 @@
 import React from 'react';
 import Track from '../General/Track';
+import './../../css/RecentlyPlayed.css';
 
 class RecentlyPlayed extends React.Component {
     state = {
@@ -17,16 +18,19 @@ class RecentlyPlayed extends React.Component {
         let {recents} = this.state;
         let recentTracks
         if(recents.length) {
-            recentTracks = recents.map(song => {
-                console.log(song);
+            recentTracks = recents.map((song, i) => {
+                if(i > 5) return null;
                 let track = song.track;
-                return <Track name={track.name} img={track.album.images[0].url} artist={track.artists[0].name}/>
+                return <Track name={track.name} img={track.album.images[0].url} artist={track.artists[0].name} key={track.id}/>
             });
         }
         
         return (
             <div>
+                <h2>Recent Tracks</h2>
+                <div id="recents">
                 {recentTracks}
+                </div>
             </div>
         )
     }
