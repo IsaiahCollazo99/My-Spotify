@@ -2,11 +2,11 @@ import React from 'react';
 import Navbar from './../Navbar/Navbar';
 import RecentlyPlayed from './RecentlyPlayed';
 
-const Home = (props) => {
+const Home = ({token}) => {
     return (
         <div>
             <Navbar />
-            <RecentlyPlayed />
+            <RecentlyPlayed token={token}/>
         </div>
     )
 }

@@ -5,6 +5,7 @@ const Navbar = () => {
     return (
         <nav>
             <NavLink exact to={"/"}>Home</NavLink>
+            
         </nav>    
     )
 } // End of Navbar Component

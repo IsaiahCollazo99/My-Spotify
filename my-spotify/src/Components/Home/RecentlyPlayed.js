@@ -1,6 +1,6 @@
 import React from 'react';
 
-const RecentlyPlayed = (props) => {
+const RecentlyPlayed = ({token}) => {
 
 } // End of RecentlyPlayed Component
 
