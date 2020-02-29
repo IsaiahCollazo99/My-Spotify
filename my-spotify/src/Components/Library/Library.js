@@ -1,7 +1,7 @@
 import React from 'react';
 import Navbar from '../Navbar/Navbar';
-import './../../css/Library.css';
 import Track from '../General/Track';
+import './../../css/Library.css';
  
 class Library extends React.Component {
     constructor(props) {
