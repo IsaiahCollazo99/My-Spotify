@@ -6,7 +6,7 @@ const LibraryNav = (props) => {
     return (
         <nav id="libraryNav">
             <NavLink exact to={"/collection/playlists"}>Playlists</NavLink>
-            <NavLink exact to={"/"}>Home</NavLink>
+            <NavLink exact to={"/collection/artists"}>Artists</NavLink>
         </nav>
     )
 }

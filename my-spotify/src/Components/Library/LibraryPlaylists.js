@@ -4,8 +4,8 @@ class LibraryPlaylists extends React.Component {
 
     render() {
         return (
-            <div id="playlists">
-                Playlists
+            <div id="libraryPlaylists">
+                libraryPlaylists
             </div>
         )
     }

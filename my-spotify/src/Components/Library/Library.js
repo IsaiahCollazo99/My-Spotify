@@ -1,7 +1,8 @@
 import React from 'react';
 import LibraryNav from './LibraryNav';
-import libraryPlaylists from './LibraryPlaylists';
-import { Route, Switch } from 'react-router-dom';
+import LibraryPlaylists from './LibraryPlaylists';
+import LibraryArtists from './LibraryArtists';
+import { Route, Switch, Redirect } from 'react-router-dom';
 import './../../css/Library.css';
  
 class Library extends React.Component {
@@ -11,7 +12,9 @@ class Library extends React.Component {
             <div id="library">
                 <LibraryNav />
                 <Switch>
-                    <Route path={"/collection/playlists"} component={libraryPlaylists} />
+                    <Redirect exact from="/collection" to="/collection/playlists" />
+                    <Route path={"/collection/playlists"} component={LibraryPlaylists} />
+                    <Route path={"/collection/artists"} component={LibraryArtists} />
                 </Switch>
             </div>
         )
