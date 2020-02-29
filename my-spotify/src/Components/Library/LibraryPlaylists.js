@@ -25,6 +25,10 @@ class LibraryPlaylists extends React.Component {
         let playlistsDisplay = playlists.map(playlist => {
             return <Playlist type={"library"} img={playlist.images[0].url} name={playlist.name} owner={playlist.owner.display_name} desc={playlist.description} key={playlist.id}/>
         })
+
+        playlistsDisplay.unshift(
+            <Playlist type={"library"} img={"https://t.scdn.co/images/3099b3803ad9496896c43f22fe9be8c4.png"} name={"Liked Songs"} key={"likedSongs"} />
+        )
         return (
             <div id="libraryPlaylists">
                 {playlistsDisplay}
