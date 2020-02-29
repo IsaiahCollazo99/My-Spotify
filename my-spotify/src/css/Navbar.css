@@ -10,12 +10,13 @@ nav {
 a {
     margin: 25px;
     text-decoration: none;
+    color: white;
 }
 
 a:hover {
     font-size: 26px;
 }
 
-a:visited {
-    color: white;
+.active {
+    color: #1DB954;
 }
