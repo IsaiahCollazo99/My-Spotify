@@ -1,16 +1,17 @@
 import React from 'react';
-import Navbar from '../Navbar/Navbar';
 import Track from '../General/Track';
 import './../../css/Library.css';
  
 class Library extends React.Component {
-    constructor(props) {
-       super(props)
-       this.tracks = [];
-       this.getSavedTracks().then(res => {
-           this.tracks = res;
-           this.render();
-       });
+
+    state = {
+        savedTracks: []
+    }
+
+    async componentDidMount() {
+       let res = await this.getSavedTracks();
+        debugger;
+       this.setState({savedTracks: res})
     }
 
     /**
@@ -37,15 +38,14 @@ class Library extends React.Component {
 
     }
     
-    render = () => {
-        let tracks = this.tracks.map(el => {
+    render() {
+        let tracks = this.state.savedTracks.map(el => {
             let track = el.track;
             return <Track type="library" name={track.name} artist={track.artists[0].name} img={track.album.images[0].url} width={40} key={track.id}/>
         })
-        
+        debugger;
         return(
             <div id="library">
-                <Navbar />
                 <div id="trackList">
                     {tracks}
                 </div>

@@ -5,6 +5,7 @@ import Home from './Components/Home/Home';
 import Login from './Components/Login/Login';
 import NowPlaying from './Components/NowPlaying/NowPlaying';
 import Library from './Components/Library/Library';
+import Navbar from './Components/Navbar/Navbar';
 import './App.css';
 
 const spotifyWebApi = new Spotify();
@@ -47,22 +48,23 @@ class App extends React.Component {
     })
   }
   
-  render = () => {
+  render(){
     let {nowPlaying} = this.state;
     let {name, img} = nowPlaying;
     return (
       <div className="App">
-      <Switch>
+        <Navbar />
+        <Switch>
 
-          <Route path={"/login"} component={Login} />
-          <Route path={"/nowPlaying"} component={NowPlaying} name={name} img={img} handleClick={this.getNowPlaying()}/>
-          <Route path={"/library"}>
-            <Library token={this.token} spotifyWebApi={spotifyWebApi}/>
-          </Route>
-          <Route exact path={"/"} >
-            <Home token={this.token} spotifyWebApi={spotifyWebApi}/>
-          </Route>
-        </Switch>
+            <Route path={"/login"} component={Login} />
+            <Route path={"/nowPlaying"} component={NowPlaying} name={name} img={img} handleClick={this.getNowPlaying}/>
+            <Route path={"/library"}>
+              <Library token={this.token} spotifyWebApi={spotifyWebApi}/>
+            </Route>
+            <Route exact path={"/"} >
+              <Home token={this.token} spotifyWebApi={spotifyWebApi}/>
+            </Route>
+          </Switch>
       </div>
     );
   }

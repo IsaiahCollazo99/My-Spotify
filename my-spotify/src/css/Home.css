@@ -1,17 +1,13 @@
-#homeDiv {
-    display: grid;
-    grid-template-columns: 1fr 7fr;
-    background: #111111;
-    text-align: center;
-    color: white;
-}
-
 .artist, .track {
     font-size: 16px;
     border-radius: 15px;
-    padding: 5px;
+    padding: 20px;
     background: #282828;
     margin: 5px;
+}
+
+.track > p {
+    text-align: left;
 }
 
 #newReleases, #recents, #topArtists, #topTracks {
@@ -21,7 +17,7 @@
     justify-content: space-evenly;
 }
 
-#homeComponents {
+#homeDiv {
     margin: 10px;
 }
 
