@@ -1,17 +1,24 @@
 #libraryNav {
+    margin-top: 50px;
     display: flex;
     flex-direction: row;
     font-size: 24px;
     grid-row: 1 / 2;
-    background: #030303;
     position: -webkit-sticky;
     position: sticky;
     top: 0;
 }
 
+#libraryNav:first-child {
+    margin-left: 25px;
+}
+
 #libraryNav > a {
     text-decoration: none;
     color: #686868;
+    margin-left: 10px;
+    margin-right: 5px;
+    font-size: 16px;
 }
 
 #libraryNav > a:hover {
