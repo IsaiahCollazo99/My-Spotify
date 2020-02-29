@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Spotify from 'spotify-web-api-js'; 
 import { Route, Switch } from 'react-router-dom';
 import Home from './Components/Home/Home';
@@ -20,7 +20,8 @@ const App = () => {
     return hashParams;
   }
 
-  const access_token = getHashParams();
+  const access_token = getHashParams().access_token;
+  console.log(access_token);
 
   if(access_token) {
     spotifyWebApi.setAccessToken(access_token);
