@@ -7,7 +7,6 @@ import { Route, Switch, Redirect } from 'react-router-dom';
 import './../../css/Library.css';
  
 const Library = ({spotifyWebApi}) => {
-
     return (
         <div id="library">
             <LibraryNav />
