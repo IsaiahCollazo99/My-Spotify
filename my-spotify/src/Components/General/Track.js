@@ -11,8 +11,9 @@ const Track = (props) => {
     }
     return (
         <div className="track">
-            <p>{props.name} By. {props.artist}</p>
             <img src={props.img} alt="album" style={props.width ? {width: props.width} : {width: 100}} />
+            <p className="songTitle">{props.name}</p>
+            <p className="songArtist">{props.artist}</p>
         </div>
     )
 } // End of Track Component

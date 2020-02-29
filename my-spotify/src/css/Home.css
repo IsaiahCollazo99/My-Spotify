@@ -8,8 +8,10 @@
 
 .artist, .track {
     font-size: 16px;
-    border: 1px solid white;
+    border-radius: 15px;
     padding: 5px;
+    background: #282828;
+    margin: 5px;
 }
 
 #newReleases, #recents, #topArtists, #topTracks {
