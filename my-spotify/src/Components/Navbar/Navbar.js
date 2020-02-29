@@ -5,8 +5,8 @@ import './../../css/Navbar.css';
 const Navbar = () => {
     return (
         <nav id="nav">
-            <NavLink exact to={"/"}>Home</NavLink>
-            <NavLink to={"/collection"}>Library</NavLink>
+            <NavLink exact to={"/"}>HOME</NavLink>
+            <NavLink to={"/collection"}>LIBRARY</NavLink>
         </nav>    
     )
 } // End of Navbar Component

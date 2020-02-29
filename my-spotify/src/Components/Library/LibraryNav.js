@@ -5,8 +5,9 @@ import './../../css/LibraryNav.css';
 const LibraryNav = (props) => {
     return (
         <nav id="libraryNav">
-            <NavLink exact to={"/collection/playlists"}>Playlists</NavLink>
-            <NavLink exact to={"/collection/artists"}>Artists</NavLink>
+            <NavLink exact to={"/collection/playlists"}>PLAYLISTS</NavLink>
+            <NavLink exact to={"/collection/artists"}>ARTISTS</NavLink>
+            <NavLink exact to={"/collection/albums"}>ALBUMS</NavLink>
         </nav>
     )
 }

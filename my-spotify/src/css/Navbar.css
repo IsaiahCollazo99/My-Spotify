@@ -8,12 +8,14 @@
     position: -webkit-sticky;
     position: sticky;
     top: 0;
+    padding-top: 23px;
 }
 
 #nav > a {
     margin: 25px;
     text-decoration: none;
     color: white;
+    font-weight: bold;
 }
 
 #nav > a:hover {
