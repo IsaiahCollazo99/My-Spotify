@@ -1,0 +1,23 @@
+#libraryNav {
+    display: flex;
+    flex-direction: row;
+    font-size: 24px;
+    grid-row: 1 / 2;
+    background: #030303;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+}
+
+#libraryNav > a {
+    text-decoration: none;
+    color: #686868;
+}
+
+#libraryNav > a:hover {
+    color: white;
+}
+
+#libraryNav > .active {
+    color: white;
+}

@@ -1,4 +1,4 @@
-nav {
+#nav {
     display: flex;
     flex-direction: column;
     font-size: 24px;
@@ -10,16 +10,16 @@ nav {
     top: 0;
 }
 
-a {
+#nav > a {
     margin: 25px;
     text-decoration: none;
     color: white;
 }
 
-a:hover {
+#nav > a:hover {
     font-size: 26px;
 }
 
-.active {
+#nav > .active {
     color: #1DB954;
 }

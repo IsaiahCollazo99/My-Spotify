@@ -1,12 +1,9 @@
 #library {
-    display: grid;
-    grid-template-columns: 1fr 7fr;
-    background: #111111;
-    text-align: center;
-    color: white;
+    display: flex;
+    flex-direction: column;
 }
 
-.libraryTrack {
-    display: flex;
-    flex-direction: row;
+#playlists {
+    background: #111111;
+    color: white;
 }
