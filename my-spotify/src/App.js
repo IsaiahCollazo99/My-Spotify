@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Spotify from 'spotify-web-api-js'; 
 import { Route, Switch } from 'react-router-dom';
 import Home from './Components/Home/Home';
@@ -10,6 +10,8 @@ import './App.css';
 const spotifyWebApi = new Spotify();
 
 const App = () => {
+  const [loggedIn, setLoggedIn] = useState(false);
+  
   const getHashParams = () => {
     var hashParams = {};
     var e, r = /([^&;=]+)=?([^&;]*)/g,
@@ -21,26 +23,35 @@ const App = () => {
   }
 
   const access_token = getHashParams().access_token;
-  console.log(access_token);
 
-  if(access_token) {
-    spotifyWebApi.setAccessToken(access_token);
+  useEffect(() => {
+    if(access_token) {
+      setLoggedIn(true)
+      spotifyWebApi.setAccessToken(access_token);
+    }
+  })
+
+  if(loggedIn) {
+    return (
+      <div className="App">
+        <Navbar />
+        <Switch>
+          <Route path={"/collection"}>
+            <Library token={access_token} spotifyWebApi={spotifyWebApi}/>
+          </Route>
+          <Route exact path={"/"} >
+            <Home token={access_token} spotifyWebApi={spotifyWebApi}/>
+          </Route>
+        </Switch>
+      </div>    
+    );
+  } else {
+    return (
+      <Login />
+    )
   }
 
-  return (
-    <div className="App">
-      <Navbar />
-      <Switch>
-        <Route path={"/login"} component={Login} />
-        <Route path={"/collection"}>
-          <Library token={access_token} spotifyWebApi={spotifyWebApi}/>
-        </Route>
-        <Route exact path={"/"} >
-          <Home token={access_token} spotifyWebApi={spotifyWebApi}/>
-        </Route>
-      </Switch>
-    </div>
-    );
+  
 }
 
 export default App;
