@@ -1,5 +1,4 @@
 import React from 'react';
-import './../../css/Artist.css';
 
 const Artist = ({name, img}) => {
     return (

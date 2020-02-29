@@ -1,5 +1,4 @@
 import React from 'react';
-import './../../css/Track.css';
 
 const Track = (props) => {
     return (

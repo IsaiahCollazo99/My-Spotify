@@ -5,3 +5,24 @@
     text-align: center;
     color: white;
 }
+
+.artist, .track {
+    font-size: 16px;
+    border: 1px solid white;
+    padding: 5px;
+}
+
+#newReleases, #recents, #topArtists, #topTracks {
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+#homeComponents {
+    margin: 10px;
+}
+
+h2 {
+    margin-top: 45px;
+}

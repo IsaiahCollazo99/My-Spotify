@@ -1,6 +1,5 @@
 import React from 'react';
 import Track from '../General/Track';
-import './../../css/RecentlyPlayed.css';
 
 class RecentlyPlayed extends React.Component {
     state = {

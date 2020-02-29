@@ -1,6 +1,5 @@
 import React from 'react';
 import Artist from './../General/Artist';
-import './../../css/TopArtists.css';
 
 class TopArtists extends React.Component {
     state = {
@@ -10,7 +9,6 @@ class TopArtists extends React.Component {
     componentDidMount = () => {
         let {spotifyWebApi} = this.props;
         spotifyWebApi.getMyTopArtists().then(res => {
-            console.log(res.items);
             this.setState(prevState => ({topArtists: res.items}));
         })
     }

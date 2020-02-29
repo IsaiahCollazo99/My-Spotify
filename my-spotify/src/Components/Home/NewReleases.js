@@ -1,6 +1,5 @@
 import React from 'react';
 import Track from '../General/Track';
-import './../../css/NewReleases.css';
 
 class NewReleases extends React.Component {
     state = {
