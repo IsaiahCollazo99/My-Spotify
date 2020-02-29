@@ -1,0 +1,12 @@
+#library {
+    display: grid;
+    grid-template-columns: 1fr 7fr;
+    background: #111111;
+    text-align: center;
+    color: white;
+}
+
+.libraryTrack {
+    display: flex;
+    flex-direction: row;
+}
