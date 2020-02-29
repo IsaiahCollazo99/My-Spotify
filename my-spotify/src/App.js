@@ -39,7 +39,6 @@ class App extends React.Component {
 
   getNowPlaying = async () => {
     let res = await spotifyWebApi.getMyCurrentPlaybackState();
-    // debugger;
     this.setState({
       nowPlaying: {
         name: res.item.name,

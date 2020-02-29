@@ -4,15 +4,12 @@
     flex-direction: row;
     font-size: 24px;
     grid-row: 1 / 2;
-    position: -webkit-sticky;
-    position: sticky;
-    top: 0;
 }
 
 #libraryNav > a {
     text-decoration: none;
     color: #686868;
-    margin-left: 45px;
+    margin-right: 45px;
     font-size: 16px;
     font-weight: bold;
     letter-spacing: 2px;

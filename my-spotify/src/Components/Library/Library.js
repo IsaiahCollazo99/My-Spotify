@@ -9,12 +9,15 @@ import './../../css/Library.css';
 class Library extends React.Component {
 
     render() {
+        const {spotifyWebApi} = this.props
         return(
             <div id="library">
                 <LibraryNav />
                 <Switch>
                     <Redirect exact from="/collection" to="/collection/playlists" />
-                    <Route path={"/collection/playlists"} component={LibraryPlaylists} />
+                    <Route path={"/collection/playlists"}>
+                        <LibraryPlaylists spotifyWebApi={spotifyWebApi} />
+                    </Route>
                     <Route path={"/collection/artists"} component={LibraryArtists} />
                     <Route path={"/collection/albums"} component={LibraryAlbums} />
                 </Switch>

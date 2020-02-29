@@ -18,9 +18,15 @@
 }
 
 #homeDiv {
-    margin: 10px;
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
 }
 
 h2 {
     margin-top: 45px;
+}
+
+.trackArtist {
+    color: #7e7e7e;
 }
