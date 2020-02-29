@@ -29,7 +29,7 @@ class RecentlyPlayed extends React.Component {
             <div>
                 <h2>Recent Tracks</h2>
                 <div id="recents">
-                {recentTracks}
+                    {recentTracks}
                 </div>
             </div>
         )
