@@ -19,7 +19,7 @@ const Playlist = ({img, name, owner, type, desc}) => {
             )
         }
         
-    }
+    } else {
         return (
             <div className="playlist">
                 <img src={img} alt="playlist" style={{width: 128}} />
@@ -27,6 +27,8 @@ const Playlist = ({img, name, owner, type, desc}) => {
                 <p className="playlistOwner">By {owner.length <= 17 ? owner : owner.slice(0, 17) + "..."}</p>
             </div>
         )
+    }
+        
 }
 
 export default Playlist

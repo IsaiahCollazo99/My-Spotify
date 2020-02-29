@@ -1,33 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Spotify from 'spotify-web-api-js'; 
 import { Route, Switch } from 'react-router-dom';
 import Home from './Components/Home/Home';
 import Login from './Components/Login/Login';
-import NowPlaying from './Components/NowPlaying/NowPlaying';
 import Library from './Components/Library/Library';
 import Navbar from './Components/Navbar/Navbar';
 import './App.css';
 
 const spotifyWebApi = new Spotify();
 
-class App extends React.Component {
-  constructor() {
-    super()
-    const {access_token} = this.getHashParams();
-    this.token = access_token;
-    this.state = {
-      loggedIn: access_token ? true : false,
-      nowPlaying: {
-        name: 'Not Checked',
-        img: ""
-      }
-    }
-    if(access_token) {
-      spotifyWebApi.setAccessToken(access_token);
-    }
-  }
-  
-  getHashParams = () => {
+const App = () => {
+  const getHashParams = () => {
     var hashParams = {};
     var e, r = /([^&;=]+)=?([^&;]*)/g,
         q = window.location.hash.substring(1);
@@ -37,36 +20,26 @@ class App extends React.Component {
     return hashParams;
   }
 
-  getNowPlaying = async () => {
-    let res = await spotifyWebApi.getMyCurrentPlaybackState();
-    this.setState({
-      nowPlaying: {
-        name: res.item.name,
-        img: res.item.album.images[0].url
-      }
-    })
+  const access_token = getHashParams();
+
+  if(access_token) {
+    spotifyWebApi.setAccessToken(access_token);
   }
-  
-  render(){
-    let {nowPlaying} = this.state;
-    let {name, img} = nowPlaying;
-    return (
-      <div className="App">
-        <Navbar />
-        <Switch>
-            <Route path={"/login"} component={Login} />
-            <Route path={"/nowPlaying"} component={NowPlaying} name={name} img={img} handleClick={this.getNowPlaying}/>
-            <Route path={"/collection"}>
-              <Library token={this.token} spotifyWebApi={spotifyWebApi}/>
-            </Route>
-            <Route exact path={"/"} >
-              <Home token={this.token} spotifyWebApi={spotifyWebApi}/>
-            </Route>
-          </Switch>
-      </div>
+
+  return (
+    <div className="App">
+      <Navbar />
+      <Switch>
+        <Route path={"/login"} component={Login} />
+        <Route path={"/collection"}>
+          <Library token={access_token} spotifyWebApi={spotifyWebApi}/>
+        </Route>
+        <Route exact path={"/"} >
+          <Home token={access_token} spotifyWebApi={spotifyWebApi}/>
+        </Route>
+      </Switch>
+    </div>
     );
-  }
-  
 }
 
 export default App;
