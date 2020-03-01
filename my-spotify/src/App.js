@@ -6,6 +6,7 @@ import Login from './Components/Login/Login';
 import Library from './Components/Library/Library';
 import Navbar from './Components/Navbar/Navbar';
 import './App.css';
+import DisplayAlbum from './Components/DisplayComponents/DisplayAlbum';
 
 const spotifyWebApi = new Spotify();
 
@@ -37,10 +38,15 @@ const App = () => {
         <Navbar />
         <Switch>
           <Route path={"/collection"}>
-            <Library token={access_token} spotifyWebApi={spotifyWebApi}/>
+            <Library spotifyWebApi={spotifyWebApi}/>
           </Route>
+
+          <Route path={"/album/:id"}>
+            <DisplayAlbum spotifyWebApi={spotifyWebApi}/>
+          </Route>
+
           <Route exact path={"/"} >
-            <Home token={access_token} spotifyWebApi={spotifyWebApi}/>
+            <Home spotifyWebApi={spotifyWebApi}/>
           </Route>
         </Switch>
       </div>    
