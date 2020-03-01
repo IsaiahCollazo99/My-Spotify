@@ -6,7 +6,7 @@ import Login from './Components/Login/Login';
 import Library from './Components/Library/Library';
 import Navbar from './Components/Navbar/Navbar';
 import './App.css';
-import DisplayAlbum from './Components/DisplayComponents/DisplayAlbum';
+import DisplayAlbum from './Components/DisplayComponents/DisplayAlbum/DisplayAlbum';
 
 const spotifyWebApi = new Spotify();
 
