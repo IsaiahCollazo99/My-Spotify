@@ -16,7 +16,7 @@ const NewReleases = ({spotifyWebApi}) => {
     let releases = newReleases.map((release, i) => {
         if(i > 5) return null;
         const {name, images, artists, id} = release
-        return <Album name={name} img={images[0].url} artist={artists[0].name} key={id}/>
+        return <Album name={name} img={images[0].url} artist={artists[0].name} id={id} key={id}/>
     })
 
     return (

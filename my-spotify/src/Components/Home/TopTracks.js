@@ -16,7 +16,7 @@ const TopTracks = ({spotifyWebApi}) => {
     let tracksToShow = topTracks.map((track, i) => {
         if(i > 5) return null;
         const {name, album, artists, id} = track
-        return <Album name={name} img={album.images[0].url} artist={artists[0].name} key={id}/>
+        return <Album name={name} img={album.images[0].url} artist={artists[0].name} id={album.id} key={id}/>
     });
     
     return (
