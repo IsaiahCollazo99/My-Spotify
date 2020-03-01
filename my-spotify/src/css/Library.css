@@ -3,7 +3,7 @@
     flex-direction: column;
 }
 
-#libraryPlaylists, #libraryArtists {
+#libraryPlaylists, #libraryArtists, #libraryAlbums {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -12,7 +12,7 @@
     color: white;
 }
 
-.libraryPlaylist {
+.libraryPlaylist, .libraryAlbum {
     font-size: 13px;
     border-radius: 15px;
     padding: 20px;
@@ -24,20 +24,20 @@
     overflow: hidden;
 }
 
-.libraryPlaylist > p, .artistName, .artistTag {
+.libraryPlaylist > p, .artistName, .artistTag, .libraryAlbum > p {
     text-align: left;
 }
 
-.playlistName, .artistName {
+.playlistName, .artistName, .albumName {
     font-weight: bold;
 }
 
-.playlistOwner, .artistTag {
+.playlistOwner, .artistTag, .albumArtist {
     color: #b4b4b4;
     font-size: 12px;
 }
 
-.playlistImg {
+.playlistImg, .albumImg {
     width: 135px;
     height: 135px;
     object-fit: cover;
