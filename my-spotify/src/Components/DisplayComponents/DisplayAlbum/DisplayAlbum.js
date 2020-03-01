@@ -1,8 +1,7 @@
 import React, { useState, useEffect, } from 'react';
 import { useParams } from 'react-router-dom';
-import displayAlbumTracks from './DisplayAlbumTracks';
+import Track from '../../General/Track';
 import './../../../css/DisplayAlbum.css';
-import DisplayAlbumTracks from './DisplayAlbumTracks';
 
 const DisplayAlbum = ({spotifyWebApi}) => {
     const { id } = useParams();
@@ -13,7 +12,6 @@ const DisplayAlbum = ({spotifyWebApi}) => {
         let res = await spotifyWebApi.getAlbum(id);
         setAlbum(res);
         setGotAlbum(true);
-        console.log(album);
     }
 
     useEffect(() => {
@@ -22,7 +20,8 @@ const DisplayAlbum = ({spotifyWebApi}) => {
     
     if(gotAlbum) {
         let tracks = album.tracks.items.map((track) => {
-            return <DisplayAlbumTracks type="displayComponents" name={track.name} artist={track.artists[0].name} runTime={track.duration_ms} />
+            const {name, artists, duration_ms} = track;
+            return <Track type="displayComponents" name={name} artist={artists[0].name} runTime={duration_ms} />
         });
         
         return (

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Track from '../General/Track';
+import Album from '../General/Album';
 
 const NewReleases = ({spotifyWebApi}) => {
     const [newReleases, setNewReleases] = useState([]);
@@ -15,7 +15,8 @@ const NewReleases = ({spotifyWebApi}) => {
 
     let releases = newReleases.map((release, i) => {
         if(i > 5) return null;
-        return <Track name={release.name} img={release.images[0].url} artist={release.artists[0].name} key={release.id}/>
+        const {name, images, artists, id} = release
+        return <Album name={name} img={images[0].url} artist={artists[0].name} key={id}/>
     })
 
     return (

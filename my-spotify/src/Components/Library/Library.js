@@ -8,7 +8,8 @@ import './../../css/Library.css';
  
 const Library = ({spotifyWebApi}) => {
     return (
-        <div id="library">
+        <div>
+         <div id="library">
             <LibraryNav />
             <Switch>
                 <Redirect exact from="/collection" to="/collection/playlists" />
@@ -23,6 +24,7 @@ const Library = ({spotifyWebApi}) => {
                 </Route> 
             </Switch>
         </div>
+     </div>
     )
 }
 

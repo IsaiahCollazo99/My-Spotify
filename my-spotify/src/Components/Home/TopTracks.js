@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Track from './../General/Track';
+import Album from './../General/Album';
 
 const TopTracks = ({spotifyWebApi}) => {
     const [topTracks, setTopTracks] = useState([]);
@@ -15,7 +15,8 @@ const TopTracks = ({spotifyWebApi}) => {
 
     let tracksToShow = topTracks.map((track, i) => {
         if(i > 5) return null;
-        return <Track name={track.name} img={track.album.images[0].url} artist={track.artists[0].name} key={track.id}/>
+        const {name, album, artists, id} = track
+        return <Album name={name} img={album.images[0].url} artist={artists[0].name} key={id}/>
     });
     
     return (

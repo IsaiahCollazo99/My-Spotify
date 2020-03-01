@@ -1,31 +1,27 @@
-.artist, .track {
-    font-size: 16px;
+#newReleases, #recents, #topArtists, #topTracks {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 50px;
+    background: #111111;
+    color: white;
+}
+
+.libraryAlbum, .artist {
+    font-size: 13px;
     border-radius: 15px;
     padding: 20px;
     background: #282828;
-    margin: 5px;
+    margin-right: 15px;
+    margin-bottom: 15px;
+    width: 145px;
+    height: 225px;
+    overflow: hidden;
 }
 
-.songCover {
-    width: 135px;
-    height: 135px;
-    object-fit: cover;
-}
-
-.track > p {
-    text-align: left;
-}
-
-#newReleases, #recents, #topArtists, #topTracks {
-    color: white;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-}
 
 #homeDiv {
     margin-top: 10px;
-    margin-right: 10px;
     margin-bottom: 10px;
 }
 
@@ -33,6 +29,8 @@ h2 {
     margin-top: 45px;
 }
 
-.trackArtist {
-    color: #7e7e7e;
+.albumImg {
+    width: 135px;
+    height: 135px;
+    object-fit: cover;
 }
