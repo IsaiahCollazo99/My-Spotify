@@ -40,9 +40,9 @@ const Track = ({name, img, artist, width, type, runTime}) => {
     }
     return (
         <div className="track">
-            <img src={img} alt="album" style={width ? {width: width} : {width: 100}} />
-            <p className="songTitle">{name.length <= 15 ? name : name.slice(0, 16) + "..."}</p>
-            <p className="songArtist">{artist.length <= 15 ? artist : artist.slice(0, 16) + "..."}</p>
+            <img src={img} alt="album" className="songCover" />
+            <p className="songTitle">{name.length <= 15 ? name : name.slice(0, 15) + "..."}</p>
+            <p className="songArtist">{artist.length <= 15 ? artist : artist.slice(0, 15) + "..."}</p>
         </div>
     )
 } // End of Track Component

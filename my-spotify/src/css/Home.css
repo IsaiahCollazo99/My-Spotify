@@ -6,6 +6,12 @@
     margin: 5px;
 }
 
+.songCover {
+    width: 135px;
+    height: 135px;
+    object-fit: cover;
+}
+
 .track > p {
     text-align: left;
 }
