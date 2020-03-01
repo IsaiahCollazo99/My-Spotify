@@ -15,7 +15,8 @@ const LibraryAlbums = ({spotifyWebApi}) => {
     }, [])
 
     let albumDisplay = albums.map(({album}) => {
-        return <Album type={"library"} img={album.images[0].url} name={album.name} artist={album.artists[0].name} key={album.id}/>
+        const {images, name, artists, id} = album;
+        return <Album img={images[0].url} name={name} artist={artists[0].name} id={id} key={id}/>
     })
     
     return (
