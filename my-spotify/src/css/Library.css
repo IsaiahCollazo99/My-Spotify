@@ -3,7 +3,7 @@
     flex-direction: column;
 }
 
-#libraryPlaylists {
+#libraryPlaylists, #libraryArtists {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -24,15 +24,15 @@
     overflow: hidden;
 }
 
-.libraryPlaylist > p {
+.libraryPlaylist > p, .artistName, .artistTag {
     text-align: left;
 }
 
-.playlistName {
+.playlistName, .artistName {
     font-weight: bold;
 }
 
-.playlistOwner {
+.playlistOwner, .artistTag {
     color: #b4b4b4;
     font-size: 12px;
 }
@@ -42,3 +42,4 @@
     height: 135px;
     object-fit: cover;
 }
+

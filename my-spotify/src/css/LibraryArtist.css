@@ -1,0 +1,25 @@
+#libraryNav {
+    margin-left: 9px;
+}
+
+.artist {
+    font-size: 13px;
+    border-radius: 15px;
+    padding: 10px;
+    background: #282828;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    width: 150px;
+    height: 225px;
+    overflow: hidden;
+    margin-left: 9px;
+}
+
+.artistImg {
+    border-radius: 100px;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin-left: 0px;
+    margin-right: 0px;
+}
