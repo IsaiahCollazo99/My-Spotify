@@ -15,7 +15,9 @@ const Library = ({spotifyWebApi}) => {
                 <Route path={"/collection/playlists"}>
                     <LibraryPlaylists spotifyWebApi={spotifyWebApi} />
                 </Route>
-                <Route path={"/collection/artists"} component={LibraryArtists} />
+                <Route path={"/collection/artists"}>
+                    <LibraryArtists spotifyWebApi={spotifyWebApi} />
+                </Route> 
                 <Route path={"/collection/albums"} component={LibraryAlbums} />
             </Switch>
         </div>

@@ -3,8 +3,8 @@ import React from 'react';
 const Artist = ({name, img}) => {
     return (
         <div className="artist">
-            <p>{name}</p>
-            <img src={img} alt="artist" style={{width: 100}} />
+            <img src={img} alt="artist" style={{width: 100}} className="artistImg"/>
+            <p className="artistName">{name}</p>
         </div>
     )
 }

@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import Playlist from '../General/Playlist';
-import './../../css/LibraryPlaylists.css';
 
 const LibraryPlaylists = ({spotifyWebApi}) => {
     const [playlists, setPlaylists] = useState([]);
