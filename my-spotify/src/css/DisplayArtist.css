@@ -1,0 +1,15 @@
+#displayArtist {
+    display: flex;
+    flex-direction: column;
+}
+
+#artistTop {
+    display: flex;
+    flex-direction: column;
+}
+
+#artistAlbums, #artistSingles {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}

@@ -5,8 +5,9 @@ import Home from './Components/Home/Home';
 import Login from './Components/Login/Login';
 import Library from './Components/Library/Library';
 import Navbar from './Components/Navbar/Navbar';
-import './App.css';
 import DisplayAlbum from './Components/DisplayComponents/DisplayAlbum/DisplayAlbum';
+import DisplayArtist from './Components/DisplayComponents/DisplayArtist/DisplayArtist';
+import './App.css';
 
 const spotifyWebApi = new Spotify();
 
@@ -36,20 +37,22 @@ const App = () => {
     return (
       <div className="App">
         <Navbar />
-          <Switch>
-            <Route path={"/collection"}>
-              <Library spotifyWebApi={spotifyWebApi}/>
-            </Route>
+        <Switch>
+          <Route path={"/collection"}>
+            <Library spotifyWebApi={spotifyWebApi}/>
+          </Route>
 
-            <Route path={"/album/:id"}>
-              <DisplayAlbum spotifyWebApi={spotifyWebApi}/>
-            </Route>
+          <Route path={"/album/:id"}>
+            <DisplayAlbum spotifyWebApi={spotifyWebApi}/>
+          </Route>
 
+          <Route path={"/artist/:id"}>
+            <DisplayArtist spotifyWebApi={spotifyWebApi}/>
+          </Route>
           <Route exact path={"/"} >
             <Home spotifyWebApi={spotifyWebApi}/>
           </Route>
-        </Switch>
-        
+        </Switch> 
       </div>    
     );
   } else {
