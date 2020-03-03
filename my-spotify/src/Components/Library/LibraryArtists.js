@@ -15,9 +15,10 @@ const LibraryArtists = ({spotifyWebApi}) => {
     }, [])
 
     let artistDisplay = artists.map(artist => {
-        let img = artist.images[0];
+        const {images, name, type, id} = artist;
+        let img = images[0];
         let backup = 'https://ya-webdesign.com/transparent250_/blank-profile-picture-png-2.png';
-        return <Artist type={"library"} img={img ? img.url : backup} name={artist.name} tag={artist.type} key={artist.id}/>
+        return <Artist img={img ? img.url : backup} name={name} tag={type} id={id} key={id}/>
     })
     
     return (

@@ -6,7 +6,7 @@
     color: white;
 }
 
-.albumAnchor {
+.albumAnchor, .artistAnchor {
     text-decoration: none;
     color: white;
 }

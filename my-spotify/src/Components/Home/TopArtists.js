@@ -15,7 +15,8 @@ const TopArtists = ({spotifyWebApi}) => {
 
     let artistsToShow = topArtists.map((artist, i) => {
         if(i > 5) return null;
-        return <Artist name={artist.name} img={artist.images[0].url} tag={artist.type} key={artist.id}/>
+        const {name, images, type, id} = artist;
+        return <Artist name={name} img={images[0].url} tag={type} id={id} key={id}/>
     });
     
     return (

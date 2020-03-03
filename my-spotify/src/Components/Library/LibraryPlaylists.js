@@ -15,7 +15,7 @@ const LibraryPlaylists = ({spotifyWebApi}) => {
 
     let playlistsDisplay = playlists.map(playlist => {
         const {images, name, owner, description, id} = playlist
-        return <Playlist img={images[0].url} name={name} owner={owner.display_name} desc={description} key={id}/>
+        return <Playlist img={images[0].url} name={name} owner={owner.display_name} desc={description} id={id} key={id}/>
     })
 
     let img = "https://t.scdn.co/images/3099b3803ad9496896c43f22fe9be8c4.png"
