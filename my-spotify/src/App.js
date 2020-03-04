@@ -8,6 +8,7 @@ import Navbar from './Components/Navbar/Navbar';
 import DisplayAlbum from './Components/DisplayComponents/DisplayAlbum/DisplayAlbum';
 import DisplayArtist from './Components/DisplayComponents/DisplayArtist/DisplayArtist';
 import DisplayPlaylist from './Components/DisplayComponents/DisplayPlaylist/DisplayPlaylist';
+import DisplayLibraryTracks from './Components/DisplayComponents/DisplayPlaylist/DisplayLibraryTracks';
 import './App.css';
 
 const spotifyWebApi = new Spotify();
@@ -53,6 +54,10 @@ const App = () => {
 
           <Route path={"/playlist/:id"}>
             <DisplayPlaylist spotifyWebApi={spotifyWebApi}/>
+          </Route>
+
+          <Route path={"/tracks"}>
+            <DisplayLibraryTracks spotifyWebApi={spotifyWebApi}/>
           </Route>
           
           <Route exact path={"/"} >

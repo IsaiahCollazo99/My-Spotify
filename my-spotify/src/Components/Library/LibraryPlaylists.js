@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Playlist from '../General/Playlist';
+import CollectionTracks from '../General/CollectionTracks';
 
 const LibraryPlaylists = ({spotifyWebApi}) => {
     const [playlists, setPlaylists] = useState([]);
@@ -20,7 +21,7 @@ const LibraryPlaylists = ({spotifyWebApi}) => {
 
     let img = "https://t.scdn.co/images/3099b3803ad9496896c43f22fe9be8c4.png"
     playlistsDisplay.unshift(
-        <Playlist img={img} name={"Liked Songs"} key={"likedSongs"} />
+        <CollectionTracks img={img} name={"Liked Songs"} key={"likedSongs"} />
     )
     
     return (
