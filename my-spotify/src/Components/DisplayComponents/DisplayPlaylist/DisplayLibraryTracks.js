@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Track from './../../General/Track';
-import './../../../css/DisplayPlaylist.css';
+import './../../../css/DisplayComponents/DisplayTracks.css';
 
 const DisplayLibraryTracks = ({spotifyWebApi}) => {
     const [tracks, setTracks] = useState([]);
@@ -28,13 +28,13 @@ const DisplayLibraryTracks = ({spotifyWebApi}) => {
         let img = "https://t.scdn.co/images/3099b3803ad9496896c43f22fe9be8c4.png"
 
         return (
-            <div id="displayPlaylist">
-                <section id="playlistInfo">
-                    <img src={img} alt="Playlist Cover" id="displayPlaylistCover" />
+            <div className="displayTracks">
+                <section className="displayInfo">
+                    <img src={img} alt="Playlist Cover" className="displayCover" />
                     <h1>Liked Songs</h1>
-                    <p id="displayPlaylistLength">{totalTracks} SONGS</p>
+                    <p className="displayLength">{totalTracks} SONGS</p>
                 </section>
-                <section id="displayPlaylistTracks">
+                <section className="displayAllTracks">
                     {displayTracks}
                 </section>
             </div>

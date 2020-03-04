@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import Track from './../../General/Track';
-import './../../../css/DisplayPlaylist.css';
+import './../../../css/DisplayComponents/DisplayTracks.css';
 
 const DisplayPlaylist = ({spotifyWebApi}) => {
     const { id } = useParams();
@@ -37,14 +37,14 @@ const DisplayPlaylist = ({spotifyWebApi}) => {
         })
 
         return (
-            <div id="displayPlaylist">
-                <section id="playlistInfo">
-                    <img src={playlist.images[0].url} alt="Playlist Cover" id="displayPlaylistCover" />
-                    <h1>{playlist.name}</h1>
-                    <p id="displayPlaylistOwner">{playlist.owner ? playlist.owner.display_name : null}</p>
-                    <p id="displayPlaylistLength">{playlist.tracks.total} SONGS</p>
+            <div className="displayTracks">
+                <section className="displayInfo">
+                    <img src={playlist.images[0].url} alt="Playlist Cover" className="displayCover" />
+                    <h1 className="displayName">{playlist.name}</h1>
+                    <p className="displayOwner">{playlist.owner ? playlist.owner.display_name : null}</p>
+                    <p className="displayLength">{playlist.tracks.total} SONGS</p>
                 </section>
-                <section id="displayPlaylistTracks">
+                <section className="displayAllTracks">
                     {displayTracks}
                 </section>
             </div>

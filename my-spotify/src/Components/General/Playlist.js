@@ -3,7 +3,7 @@ import React from 'react';
 const Playlist = ({img, name, owner, id}) => {
     if(owner) {
         return (
-            <a href={`http://localhost:3000/playlist/${id}`} className="playlistAnchor">
+            <a href={`http://localhost:3000/playlist/${id}`} className="displayAnchor">
                 <div className="libraryPlaylist">
                     <img src={img} alt="playlist" className="playlistImg" />
                     <p className="playlistName">{name.length <= 17 ? name : name.slice(0, 17) + "..."}</p>

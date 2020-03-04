@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import Track from '../../General/Track';
 import Album from '../../General/Album';
-import './../../../css/DisplayArtist.css';
+import './../../../css/DisplayComponents/DisplayArtist.css';
 
 const DisplayArtist = ({spotifyWebApi}) => {
     const { id } = useParams();
