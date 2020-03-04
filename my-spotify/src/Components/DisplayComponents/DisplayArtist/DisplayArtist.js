@@ -26,11 +26,14 @@ const DisplayArtist = ({spotifyWebApi}) => {
     const setAlbumType = (albumList) => {
         let albumTypeAlbum = [];
         let albumTypeSingle = [];
+        let seen = {}
         albumList.forEach(album => {
-            const {album_type} = album;
-            if(album_type === "album") {
+            const {album_type, name} = album;
+            if(album_type === "album" && seen[name] !== album_type) {
+                seen[name] = album_type;
                 albumTypeAlbum.push(album);
-            } else if(album_type === "single") {
+            } else if(album_type === "single" && seen[name] !== album_type) {
+                seen[name] = album_type;
                 albumTypeSingle.push(album);
             }
         })
