@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import Track from './../../General/Track';
 import { useBottomScrollListener } from 'react-bottom-scroll-listener';
+import Track from './../../General/Track';
 import './../../../css/DisplayComponents/DisplayTracks.css';
 
 const DisplayLibraryTracks = ({spotifyWebApi}) => {
