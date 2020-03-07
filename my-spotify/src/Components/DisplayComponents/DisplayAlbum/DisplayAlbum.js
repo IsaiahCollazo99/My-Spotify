@@ -1,12 +1,30 @@
 import React, { useState, useEffect, } from 'react';
 import { useParams } from 'react-router-dom';
+import { useBottomScrollListener } from 'react-bottom-scroll-listener';
 import Track from '../../General/Track';
 import './../../../css/DisplayComponents/DisplayTracks.css';
 
 const DisplayAlbum = ({spotifyWebApi}) => {
     const { id } = useParams();
+    const [tracks, setTracks] = useState([]);
+    const [gotTracks, setGotTracks] = useState(false);
+    const [offset, setOffset] = useState(0);
     const [album, setAlbum] = useState({});
     const [gotAlbum, setGotAlbum] =useState(false);
+
+    const getAlbumTracks = async () => {
+        let res = await spotifyWebApi.getAlbumTracks(id, {offset, limit: 50});
+        setTracks([...tracks, ...res.items]);
+
+        if(!gotTracks) {
+            setOffset(51);
+            setGotTracks(true);
+        } else {
+            setOffset(offset + 50)
+        }
+    }
+
+    useBottomScrollListener(getAlbumTracks);
 
     const getAlbum = async () => {
         let res = await spotifyWebApi.getAlbum(id);
@@ -15,13 +33,16 @@ const DisplayAlbum = ({spotifyWebApi}) => {
     }
 
     useEffect(() => {
-        getAlbum();
+        if(!gotAlbum || !gotTracks) {
+            getAlbum();
+            getAlbumTracks();
+        }
     }, [])
     
     if(gotAlbum) {
-        let tracks = album.tracks.items.map((track) => {
-            const {name, artists, duration_ms} = track;
-            return <Track type="displayComponents" name={name} artist={artists[0].name} runTime={duration_ms} />
+        let displayTracks = tracks.map((track) => {
+            const {id: track_id, name, artists, duration_ms} = track;
+            return <Track type="displayComponents" name={name} artist={artists[0].name} runTime={duration_ms} key={track_id}/>
         });
         
         return (
@@ -33,7 +54,7 @@ const DisplayAlbum = ({spotifyWebApi}) => {
                     <p className="displayLength">{album.tracks.items.length} SONGS</p>
                 </section>
                 <section className="displayAllTracks">
-                    {tracks}
+                    {displayTracks}
                 </section>
             </div>
         )
