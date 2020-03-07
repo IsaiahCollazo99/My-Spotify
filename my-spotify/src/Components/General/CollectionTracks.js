@@ -1,13 +1,14 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const CollectionTracks = ({img, name}) => {
     return (
-        <a href={`http://localhost:3000/tracks`} className="displayAnchor">
+        <Link to={`/tracks`} className="displayAnchor">
         <div className="libraryPlaylist">
             <img src={img} alt="playlist" className="playlistImg" />
             <p className="playlistName">{name.length <= 17 ? name : name.slice(0, 17) + "..."}</p>
         </div>
-    </a>
+    </Link>
     )
 }
 
