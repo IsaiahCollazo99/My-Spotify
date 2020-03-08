@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import { useBottomScrollListener } from 'react-bottom-scroll-listener';
 import Track from '../../General/Track';
 import Album from '../../General/Album';
 import './../../../css/DisplayComponents/DisplayArtist.css';
@@ -11,6 +12,8 @@ const DisplayArtist = ({spotifyWebApi}) => {
     const [albums, setAlbums] = useState([]);
     const [singles, setSingles] = useState([]);
     const [gotArtist, setGotArtist] =useState(false);
+    const [gotAllAlbums, setGotAllAlbums] = useState(false);
+    const [offset, setOffset] = useState(0);
 
     const getArtist = async () => {
         let res = await spotifyWebApi.getArtist(id);
@@ -27,24 +30,35 @@ const DisplayArtist = ({spotifyWebApi}) => {
         let albumTypeAlbum = [];
         let albumTypeSingle = [];
         let seen = {}
-        albumList.forEach(album => {
-            const {album_type, name} = album;
-            if(album_type === "album" && seen[name] !== album_type) {
-                seen[name] = album_type;
-                albumTypeAlbum.push(album);
-            } else if(album_type === "single" && seen[name] !== album_type) {
-                seen[name] = album_type;
-                albumTypeSingle.push(album);
+        if(!gotAllAlbums) {
+            for(let i = 0; i < albumList.length; i++) {
+                const album = albumList[i];
+                const {album_type, name, artists} = album;
+                if(artists[0].id === id) {
+                    if(album_type === "album" && seen[name] !== album_type) {
+                        seen[name] = album_type;
+                        albumTypeAlbum.push(album);
+                    } else if(album_type === "single" && seen[name] !== album_type) {
+                        seen[name] = album_type;
+                        albumTypeSingle.push(album);
+                    }
+                }
             }
-        })
-        setSingles(albumTypeSingle);
-        setAlbums(albumTypeAlbum);
+
+            if(!offset) setOffset(51);
+            else setOffset(offset + 50);
+    
+            setSingles([...singles, ...albumTypeSingle]);
+            setAlbums([...albums, ...albumTypeAlbum]);
+        }
     }
 
     const getAlbums = async () => {
-        let res = await spotifyWebApi.getArtistAlbums(id, {limit: 50});
+        let res = await spotifyWebApi.getArtistAlbums(id, {offset, limit: 50});
         setAlbumType(res.items);
     }
+
+    useBottomScrollListener(getAlbums);
 
     useEffect(() => {
         getArtist();

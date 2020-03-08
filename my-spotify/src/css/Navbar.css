@@ -9,6 +9,7 @@
     top: 0;
     padding-top: 58px;
     margin-right: 15px;
+    z-index: 3;
 }
 
 #nav > a {

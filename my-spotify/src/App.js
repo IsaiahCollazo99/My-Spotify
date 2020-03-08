@@ -9,6 +9,7 @@ import DisplayAlbum from './Components/DisplayComponents/DisplayAlbum/DisplayAlb
 import DisplayArtist from './Components/DisplayComponents/DisplayArtist/DisplayArtist';
 import DisplayPlaylist from './Components/DisplayComponents/DisplayPlaylist/DisplayPlaylist';
 import DisplayLibraryTracks from './Components/DisplayComponents/DisplayPlaylist/DisplayLibraryTracks';
+import Playback from './Components/Playback/Playback';
 import './App.css';
 
 const spotifyWebApi = new Spotify();
@@ -39,31 +40,34 @@ const App = () => {
     return (
       <div className="App">
         <Navbar />
-        <Switch>
-          <Route path={"/collection"}>
-            <Library spotifyWebApi={spotifyWebApi}/>
-          </Route>
+        <Playback spotifyWebApi={spotifyWebApi}/>
+        <div className="mainContent">
+          <Switch>
+            <Route path={"/collection"}>
+              <Library spotifyWebApi={spotifyWebApi}/>
+            </Route>
 
-          <Route path={"/album/:id"}>
-            <DisplayAlbum spotifyWebApi={spotifyWebApi}/>
-          </Route>
+            <Route path={"/album/:id"}>
+              <DisplayAlbum spotifyWebApi={spotifyWebApi}/>
+            </Route>
 
-          <Route path={"/artist/:id"}>
-            <DisplayArtist spotifyWebApi={spotifyWebApi}/>
-          </Route>
+            <Route path={"/artist/:id"}>
+              <DisplayArtist spotifyWebApi={spotifyWebApi}/>
+            </Route>
 
-          <Route path={"/playlist/:id"}>
-            <DisplayPlaylist spotifyWebApi={spotifyWebApi}/>
-          </Route>
+            <Route path={"/playlist/:id"}>
+              <DisplayPlaylist spotifyWebApi={spotifyWebApi}/>
+            </Route>
 
-          <Route path={"/tracks"}>
-            <DisplayLibraryTracks spotifyWebApi={spotifyWebApi}/>
-          </Route>
-          
-          <Route exact path={"/"} >
-            <Home spotifyWebApi={spotifyWebApi}/>
-          </Route>
-        </Switch> 
+            <Route path={"/tracks"}>
+              <DisplayLibraryTracks spotifyWebApi={spotifyWebApi}/>
+            </Route>
+            
+            <Route exact path={"/"} >
+              <Home spotifyWebApi={spotifyWebApi}/>
+            </Route>
+          </Switch>
+        </div>
       </div>    
     );
   } else {
