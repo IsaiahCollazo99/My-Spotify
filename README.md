@@ -16,3 +16,8 @@ combat this, My Spotify waits for the user to scroll to the bottom of the page, 
 ## [How to Start](https://github.com/IsaiahCollazo99/My-Spotify/blob/master/my-spotify/README.md)
 * Use these commands (linked on the above heading) with the frontend folder open in the terminal
 * In the auth-server/authorization_code folder run ```node app.js```
+
+## Features to Come
+* Ability for the user to control their playback (pause/play, and seek)
+* Ability to click and play a song from the app
+* Search functionality
