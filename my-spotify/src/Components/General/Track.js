@@ -14,10 +14,19 @@ const Track = ({ track, context, position, spotifyWebApi }) => {
     
     let time = msToMinutesAndSeconds(runTime);
 
+    const isValidContext = () => {
+        return context === "album" || context === "playlist";
+    }
+
     const playSong = () => {
         try {
             console.log({context, contextId, position});
-            spotifyWebApi.play({context_uri: `spotify:${context}:${contextId}`, offset: {position} })
+            if(isValidContext()) {
+                spotifyWebApi.play({context_uri: `spotify:${context}:${contextId}`, offset: {position} })
+            } else {
+                console.log(track.id)
+                spotifyWebApi.play({uris: [`spotify:track:${track.id}`]});
+            }
         } catch ( error ) {
             console.log(error)
         }
