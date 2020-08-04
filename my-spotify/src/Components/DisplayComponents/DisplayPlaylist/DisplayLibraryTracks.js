@@ -34,7 +34,7 @@ const DisplayLibraryTracks = ({spotifyWebApi}) => {
                 track,
                 key: track.id,
                 spotifyWebApi,
-                context: "playlist"
+                context: "library"
             }
             return <Track {...trackProps} />
         })
