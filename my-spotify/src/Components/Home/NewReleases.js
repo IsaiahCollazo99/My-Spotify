@@ -20,7 +20,7 @@ const NewReleases = ({spotifyWebApi}) => {
     })
 
     return (
-        <div>
+        <div className="homeListContainer">
             <h2>New Releases</h2>
             <div id="newReleases">
                 {releases}

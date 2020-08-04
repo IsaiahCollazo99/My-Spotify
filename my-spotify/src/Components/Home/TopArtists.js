@@ -20,7 +20,7 @@ const TopArtists = ({spotifyWebApi}) => {
     });
     
     return (
-        <div>
+        <div className="homeListContainer">
             <h2>Your Top Artists</h2>
             <div id="topArtists">
                 {artistsToShow}
