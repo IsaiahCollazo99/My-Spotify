@@ -18,9 +18,14 @@ const Track = ({ track, context, position, spotifyWebApi }) => {
         return context === "album" || context === "playlist";
     }
 
-    const playSong = () => {
+    const playSong = async () => {
         try {
-            console.log({context, contextId, position});
+            const { devices } = await spotifyWebApi.getMyDevices();
+            const noActiveDevice = devices.every(device => device.is_active === false);
+            if(noActiveDevice) {
+                const [ device ] = devices;
+                spotifyWebApi.transferMyPlayback([device.id]);
+            }
             if(isValidContext()) {
                 spotifyWebApi.play({context_uri: `spotify:${context}:${contextId}`, offset: {position} })
             } else {
