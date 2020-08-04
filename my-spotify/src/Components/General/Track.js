@@ -7,15 +7,20 @@ const msToMinutesAndSeconds = (ms) => {
     return minutes + ":" + (seconds < 10 ? '0' : '') + seconds;
 }
 
-const Track = ({track, spotifyWebApi}) => {
-    const { duration_ms: runTime, name, artists, id } = track;
+const Track = ({ track, context, position, spotifyWebApi }) => {
+    const { duration_ms: runTime, name, artists } = track;
     const [ { name: artist } ] = artists;
-    const { id: albumId } = useParams();
+    const { id: contextId } = useParams();
     
     let time = msToMinutesAndSeconds(runTime);
 
     const playSong = () => {
-        spotifyWebApi.play({uris: [`spotify:track:${id}`]})
+        try {
+            console.log({context, contextId, position});
+            spotifyWebApi.play({context_uri: `spotify:${context}:${contextId}`, offset: {position} })
+        } catch ( error ) {
+            console.log(error)
+        }
     }
     
     return (

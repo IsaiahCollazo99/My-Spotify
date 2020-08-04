@@ -40,11 +40,13 @@ const DisplayAlbum = ({spotifyWebApi}) => {
     }, [])
     
     if(gotAlbum) {
-        let displayTracks = tracks.map((track) => {
+        let displayTracks = tracks.map((track, i) => {
             const trackProps = {
                 track,
                 key: track.track_id,
-                spotifyWebApi
+                spotifyWebApi,
+                context: "album",
+                position: i
             }
             return <Track {...trackProps} />
         });

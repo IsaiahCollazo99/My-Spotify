@@ -17,10 +17,10 @@ const Playback = ({spotifyWebApi}) => {
 
     useEffect(() => {
         getPlaybackState();
-    }, [])
+    }, [currentlyPlaying])
 
     return (
-        <footer className="playback">
+        <footer className="playback" onClick={getPlaybackTrack}>
             <div className="playbackLeft">
                 <p>{currentlyPlaying.name}</p>
                 <p>{currentlyPlaying.artists ? currentlyPlaying.artists[0].name : null}</p>

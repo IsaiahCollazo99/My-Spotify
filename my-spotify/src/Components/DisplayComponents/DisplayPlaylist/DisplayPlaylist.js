@@ -40,10 +40,15 @@ const DisplayPlaylist = ({spotifyWebApi}) => {
     })
 
     if(gotTracks && gotPlaylist) {
-        let displayTracks = tracks.map(trackObj => {
-            const { track } = trackObj;
-            const {duration_ms, name, artists, id: track_id} = track;
-            return <Track runTime={duration_ms} name={name} artist={artists[0].name} key={track_id}/>
+        let displayTracks = tracks.map(({ track }, i) => {
+            const trackProps = {
+                track,
+                key: track.id,
+                spotifyWebApi,
+                context: "playlist",
+                position: i
+            }
+            return <Track {...trackProps} />
         })
 
         return (

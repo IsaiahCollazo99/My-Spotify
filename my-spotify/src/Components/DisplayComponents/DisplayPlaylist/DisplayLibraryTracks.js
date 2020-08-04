@@ -29,10 +29,14 @@ const DisplayLibraryTracks = ({spotifyWebApi}) => {
     }, [])
 
     if(gotTracks) {
-        let displayTracks = tracks.map(trackObj => {
-            const { track } = trackObj;
-            const {duration_ms, name, artists, id} = track;
-            return <Track runTime={duration_ms} name={name} artist={artists[0].name} key={id}/>
+        let displayTracks = tracks.map(({ track }) => {
+            const trackProps = {
+                track,
+                key: track.id,
+                spotifyWebApi,
+                context: "playlist"
+            }
+            return <Track {...trackProps} />
         })
 
         let img = "https://t.scdn.co/images/3099b3803ad9496896c43f22fe9be8c4.png"
