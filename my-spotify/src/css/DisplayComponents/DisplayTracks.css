@@ -31,8 +31,13 @@
 .displayTrack {
     display: flex;
     justify-content: space-between;
-    margin-left: 60px;
-    margin-right: 60px;
+    margin: 0 60px;
+    padding: 0 20px;
+}
+
+.displayTrack:hover {
+    background-color: #4e4e4e;
+    cursor: pointer;
 }
 
 .displayLeft {

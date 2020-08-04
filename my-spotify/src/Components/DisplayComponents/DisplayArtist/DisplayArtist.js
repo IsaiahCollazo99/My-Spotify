@@ -70,7 +70,14 @@ const DisplayArtist = ({spotifyWebApi}) => {
         let displayTop = topTracks.map((track, i) => {
             if(i > 4) return null;
             const {duration_ms, name, artists, id} = track;
-            return <Track runTime={duration_ms} name={name} artist={artists[0].name} key={id}/>
+            const trackProps = {
+                name,
+                artist: artists[0].name,
+                runTime: duration_ms,
+                key: id,
+                spotifyWebApi
+            }
+            return <Track {...trackProps} />
         })
 
         let displayAlbums = albums.map(album => {
