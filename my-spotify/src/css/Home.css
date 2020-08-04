@@ -22,6 +22,9 @@
     overflow: hidden;
 }
 
+.libraryAlbum:hover, .artist:hover {
+    background: #444444;
+}
 
 #homeDiv {
     margin-top: 10px;

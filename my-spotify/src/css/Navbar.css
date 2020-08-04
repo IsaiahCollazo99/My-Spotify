@@ -15,12 +15,12 @@
 #nav > a {
     margin: 25px;
     text-decoration: none;
-    color: white;
+    color: rgb(185, 185, 185);
     font-weight: bold;
 }
 
-#nav > a:hover {
-    font-size: 26px;
+#nav > a:hover:not(.active) {
+    color: white;
 }
 
 #nav > .active {
