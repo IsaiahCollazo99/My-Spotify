@@ -71,7 +71,7 @@ const DisplayArtist = ({spotifyWebApi}) => {
             if(i > 4) return null;
             const trackProps = {
                 track,
-                key: track.id,
+                key: i,
                 spotifyWebApi,
                 context: "artist",
                 position: i

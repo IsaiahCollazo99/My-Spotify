@@ -29,10 +29,10 @@ const DisplayLibraryTracks = ({spotifyWebApi}) => {
     }, [])
 
     if(gotTracks) {
-        let displayTracks = tracks.map(({ track }) => {
+        let displayTracks = tracks.map(({ track }, i) => {
             const trackProps = {
                 track,
-                key: track.id,
+                key: i,
                 spotifyWebApi,
                 context: "library"
             }

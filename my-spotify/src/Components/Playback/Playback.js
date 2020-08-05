@@ -5,7 +5,11 @@ const Playback = ({spotifyWebApi}) => {
 
     const getPlaybackTrack = async () => {
         let res = await spotifyWebApi.getMyCurrentPlayingTrack();
-        setCurrentPlaying(res.item);
+        if(res.item) {
+            setCurrentPlaying(res.item);
+        } else {
+            setCurrentPlaying({});
+        }
     }
 
     const getPlaybackState = async () => {

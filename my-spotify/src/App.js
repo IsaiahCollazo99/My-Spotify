@@ -39,8 +39,8 @@ const App = () => {
   if(loggedIn) {
     return (
       <div className="App">
-        <Navbar />
-        <Playback spotifyWebApi={spotifyWebApi}/>
+        <Navbar spotifyWebApi={spotifyWebApi} />
+        <Playback spotifyWebApi={spotifyWebApi} />
         <div className="mainContent">
           <Switch>
             <Route path={"/collection"}>

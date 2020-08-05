@@ -43,7 +43,7 @@ const DisplayPlaylist = ({spotifyWebApi}) => {
         let displayTracks = tracks.map(({ track }, i) => {
             const trackProps = {
                 track,
-                key: track.id,
+                key: i,
                 spotifyWebApi,
                 context: "playlist",
                 position: i

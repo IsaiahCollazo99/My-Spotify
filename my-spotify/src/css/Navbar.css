@@ -3,26 +3,54 @@
     flex-direction: column;
     font-size: 24px;
     background: #030303;
-    width: 12%;
+    width: 14%;
     height: 100vh;
     position: fixed;
     top: 0;
-    padding-top: 58px;
+    padding-top: 5px;
     margin-right: 15px;
     z-index: 3;
+    text-align: left;
 }
 
-#nav > a {
-    margin: 25px;
+#nav a {
     text-decoration: none;
     color: rgb(185, 185, 185);
     font-weight: bold;
 }
 
-#nav > a:hover:not(.active) {
+#nav > a {
+    margin: 25px;
+}
+
+#nav a:hover:not(.active) {
     color: white;
 }
 
-#nav > .active {
+#nav .active {
     color: #1DB954;
+}
+
+#nav hr {
+    width: 80%;
+    background-color: rgb(185, 185, 185);
+}
+
+#nav h5 {
+    margin: 0 25px;
+    margin-top: 25px;
+    color: rgb(185, 185, 185);
+}
+
+.navPlaylists {
+    margin: 0 25px;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+}
+
+.navPlaylists a {
+    font-size: 16px;
+    margin: 15px 0;
+    text-overflow: ellipsis;
 }
