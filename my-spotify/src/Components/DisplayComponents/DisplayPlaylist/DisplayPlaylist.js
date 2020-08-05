@@ -37,7 +37,18 @@ const DisplayPlaylist = ({spotifyWebApi}) => {
             getPlaylist();
             getPlaylistTracks();
         }
-    })
+    }, [gotPlaylist])
+
+    const resetStates = () => {
+        setGotPlaylist(false);
+        setGotTracks(false);
+        setOffset(0);
+        setTracks([]);
+    }
+
+    useEffect(() => {
+        resetStates();
+    }, [id])
 
     if(gotTracks && gotPlaylist) {
         let displayTracks = tracks.map(({ track }, i) => {
