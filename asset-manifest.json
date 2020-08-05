@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/My-Spotify/static/css/main.2d07b8e1.chunk.css",
+    "main.js": "/My-Spotify/static/js/main.7876c877.chunk.js",
+    "main.js.map": "/My-Spotify/static/js/main.7876c877.chunk.js.map",
+    "runtime-main.js": "/My-Spotify/static/js/runtime-main.6a25bc2a.js",
+    "runtime-main.js.map": "/My-Spotify/static/js/runtime-main.6a25bc2a.js.map",
+    "static/js/2.1269ae8e.chunk.js": "/My-Spotify/static/js/2.1269ae8e.chunk.js",
+    "static/js/2.1269ae8e.chunk.js.map": "/My-Spotify/static/js/2.1269ae8e.chunk.js.map",
+    "index.html": "/My-Spotify/index.html",
+    "precache-manifest.363689ed09b8a71986987b602cfa1add.js": "/My-Spotify/precache-manifest.363689ed09b8a71986987b602cfa1add.js",
+    "service-worker.js": "/My-Spotify/service-worker.js",
+    "static/css/main.2d07b8e1.chunk.css.map": "/My-Spotify/static/css/main.2d07b8e1.chunk.css.map",
+    "static/js/2.1269ae8e.chunk.js.LICENSE.txt": "/My-Spotify/static/js/2.1269ae8e.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.6a25bc2a.js",
+    "static/js/2.1269ae8e.chunk.js",
+    "static/css/main.2d07b8e1.chunk.css",
+    "static/js/main.7876c877.chunk.js"
+  ]
+}
